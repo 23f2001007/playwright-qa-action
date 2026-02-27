@@ -1,0 +1,26 @@
+name: QA Playwright Run - 23f2001007@ds.study.iitm.ac.in
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  run-playwright:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          pip install playwright
+          python -m playwright install
+
+      - name: Run Playwright Script
+        run: python sum_tables.py
