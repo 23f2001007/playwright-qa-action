@@ -1,4 +1,4 @@
-name: QA Playwright Run - 23f2001007@ds.study.iitm.ac.in
+name: QA Playwright Run
 
 on:
   push:
@@ -22,5 +22,5 @@ jobs:
           pip install playwright
           python -m playwright install
 
-      - name: Run Playwright Script
+      - name: Run Playwright Script - 23f2001007@ds.study.iitm.ac.in
         run: python sum_tables.py
